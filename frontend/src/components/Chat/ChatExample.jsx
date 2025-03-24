@@ -1,6 +1,6 @@
-const ChatExample = () => {
+const ChatExample = ({ state }) => {
     return (
-        <div className='bg-white p-6 rounded-lg shadow-md hidden w-85 md:flex flex-col mt-10'>
+        <div className={`bg-white p-6 rounded-lg shadow-md hidden w-85 md:flex flex-col ${state === 'login' && 'mt-10'}`}>
             {/* Chat Example */}
             <h2 className='text-2xl font-bold mb-4 text-center'>Chat</h2>
             <div className='flex-1 overflow-y-auto mb-4 space-y-2'>

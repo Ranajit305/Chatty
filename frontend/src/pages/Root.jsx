@@ -19,7 +19,7 @@ const Root = () => {
                 {/* Login and Singup Forms */}
                 {state === 'login' ? <Login setState={setState}/> : <Signup setState={setState}/>}
             </div>
-            <ChatExample />
+            <ChatExample state={state}/>
         </div>
     )
 }
