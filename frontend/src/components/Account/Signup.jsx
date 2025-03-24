@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useAuthStore } from '../../stores/useAuthStore';
 import { Loader } from 'lucide-react';
 
-const Signup = () => {
+const Signup = ({ setState }) => {
 
     const { signup, isGettingUser } = useAuthStore();
 
@@ -22,8 +22,8 @@ const Signup = () => {
     }
 
     return (
-        <div className='bg-white p-8 rounded-lg shadow-md w-85'>
-            <h2 className='text-2xl font-bold mb-6 text-center'>Signup</h2>
+        <div className='bg-white p-8 rounded-lg shadow-md w-90'>
+            <h2 className='text-2xl font-bold mb-6 text-center'>SIGN UP</h2>
             <form onSubmit={handleSignup}>
                 <div className='mb-4'>
                     <label className='block text-sm font-medium text-gray-700'>Name</label>
@@ -64,6 +64,14 @@ const Signup = () => {
                 >
                     {isGettingUser ? <Loader className='w-6 h-6 animate-spin' /> : 'Sign Up'}
                 </button>
+                <p className="text-center mt-5 text-gray-600 text-sm sm:text-base">
+                    Already have an account?
+                    <span onClick={() => setState('login')}
+                        className="text-blue-500 font-medium cursor-pointer hover:underline ml-1 transition"
+                    >
+                        Click here
+                    </span>
+                </p>
             </form>
         </div>
     )
